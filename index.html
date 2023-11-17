@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #loginForm {
+            width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Quotation</h2>
+
+    <form id="loginForm" onsubmit="authenticate(event)">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <p id="authMessage"></p>
+
+    <script>
+        function authenticate(event) {
+            event.preventDefault();
+
+            // Get input values
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check if username and password match
+            if (username === "csp" && password === "henry") {
+                document.getElementById("authMessage").innerHTML = "Quotation is Authentic  " 
+            } else {
+                document.getElementById("authMessage").innerHTML = "Authentication failed. Please check your username and password.";
+            }
+        }
+    </script>
+</body>
+</html>
