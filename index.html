@@ -12,10 +12,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
-        #loginContainer {
+        #VerifyContainer {
             background-color: #ffffff;
             padding: 20px;
             border-radius: 8px;
@@ -24,9 +24,15 @@
             width: 300px;
         }
 
-        #loginForm {
+        #VerifyForm {
             max-width: 100%;
             margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
         }
 
         input[type="text"],
@@ -59,21 +65,25 @@
             margin-top: 10px;
         }
 
+        #currentDateTime {
+            margin-top: 20px;
+            color: #555;
+        }
     </style>
-    <title>Login Page</title>
+    <title>Verify Page</title>
 </head>
 <body>
-    <div id="loginContainer">
+    <div id="VerifyContainer">
         <h2>QUOTATION</h2>
 
-        <form id="loginForm">
+        <form id="VerifyForm">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required value="csp"><br><br>
+            <input type="text" id="username" name="username" required value="csp"><br>
 
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br><br>
+            <input type="password" id="password" name="password" required><br>
 
-            <input type="submit" value="Login">
+            <input type="submit" value="Verify">
         </form>
 
         <p id="authMessage"></p>
@@ -82,7 +92,7 @@
     </div>
 
     <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
+        document.getElementById("VerifyForm").addEventListener("submit", function(event) {
             event.preventDefault();
 
             var username = document.getElementById("username").value;
