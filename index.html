@@ -82,7 +82,7 @@
 </head>
 <body>
     <div id="VerifyContainer">
-        <h2>Quotation Verification</h2>
+        <h2>Professional Verification</h2>
 
         <form id="VerifyForm">
             <label for="username">Username:</label>
@@ -106,7 +106,22 @@
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
-            if (username === "csp" && password === "henry") {
+            var validCredentials = {
+                "csp": "henry",
+                "QTM2311/608": "henry",
+                "QTM2311/610": "henry",
+                "QTM2311/613": "henry",
+                "QTM2311/614": "henry",
+                "QTM2311/620": "henry",
+                "QTM2311/622": "henry",
+                "QTM2311/623": "henry",
+                "QTM2311/628": "henry",       
+                "QTM2311/629": "henry",
+                "QTM2311/630": "henry",
+                "QTM2311/631": "henry"
+            }; // Add more usernames and passwords as needed
+
+            if (validCredentials.hasOwnProperty(username) && validCredentials[username] === password) {
                 document.getElementById("authMessage").innerHTML = "Verification successful." ;
             } else {
                 document.getElementById("authMessage").innerHTML = "Verification failed. Please check your credentials.";
