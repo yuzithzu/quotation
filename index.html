@@ -79,7 +79,7 @@
 
         <form id="VerifyForm">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required value="csp"><br>
+            <input type="text" id="username" name="username" required value=""><br>
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br>
@@ -104,6 +104,10 @@
             } else {
                 document.getElementById("authMessage").innerHTML = "Authentication failed. Please check your username and password.";
             }
+
+            // Clear both username and password fields
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
         });
 
         function updateDateTime() {
