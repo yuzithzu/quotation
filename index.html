@@ -124,13 +124,17 @@
                 "QTM2311/628": "henry",       
                 "QTM2311/629": "henry",
                 "QTM2311/630": "henry",
-                "QTM2311/631": "henry"
+                "QTM2311/631": "henry",
+                "QTM2311/632": "henry",
+                "QTM2311/633": "henry",
+                "QTM2311/634": "henry"
             };
 
             if (validCredentials.hasOwnProperty(username) && validCredentials[username] === password) {
-                document.getElementById("authMessage").innerHTML = "Quotation is Authentic, " + firstname + " " + middleinitial + " " + surname + ".";
+                var fullName = (middleinitial ? firstname + " " + middleinitial + " " : firstname) + surname;
+                document.getElementById("authMessage").innerHTML = "QUOTATION IS AUTHENTIC, " + fullName.toUpperCase() + ".";
             } else {
-                document.getElementById("authMessage").innerHTML = "This Quotation is not Valid";
+                document.getElementById("authMessage").innerHTML = "THIS QUOTATION IS NOT VALID";
             }
 
             // Clear all fields
